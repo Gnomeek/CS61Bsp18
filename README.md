@@ -17,6 +17,6 @@ So it would be great for me to receive your stars and I hope that this can reall
 ## WEEK 1
 
 - [x] lecture1
-- [ ] lab01
+- [x] lab01
 - [x] hw0
-- [ ] lecture2
+- [x] lecture2
