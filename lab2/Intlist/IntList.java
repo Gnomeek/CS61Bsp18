@@ -81,7 +81,7 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        /* Iterative way
+        /* Iterative way */
         if (A == null){
             return B;
         }
@@ -96,10 +96,7 @@ public class IntList {
         return A;
         */
         /* recursive method */
-        if (A == null){
-            return B;
-        }
-
+        // TODO LIST
     }
 
 
