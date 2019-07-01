@@ -94,7 +94,7 @@ public class IntList {
             ptr = ptr.rest;
         }
         return A;
-        */
+
         /* recursive method */
         // TODO LIST
     }
