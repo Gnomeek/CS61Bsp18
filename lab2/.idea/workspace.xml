@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2083ace2-7327-4e20-9296-683402ad710f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab2setup/.idea/libraries/javalib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DebugPractice/DebugExercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/DebugPractice/DebugExercise2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DebugPractice/DebugExercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/DebugPractice/DebugExercise3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DebugPractice/foods.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DebugPractice/foods.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intlist/IntList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Intlist/IntList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,20 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Intlist/IntList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="104">
+              <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Intlist/IntListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+            <state relative-caret-position="717">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -51,8 +48,8 @@
         <option value="$PROJECT_DIR$/DebugPractice/DebugExercise2.java" />
         <option value="$PROJECT_DIR$/DebugPractice/DebugExercise3.java" />
         <option value="$PROJECT_DIR$/DebugPractice/foods.csv" />
-        <option value="$PROJECT_DIR$/Intlist/IntList.java" />
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
+        <option value="$PROJECT_DIR$/Intlist/IntList.java" />
       </list>
     </option>
   </component>
@@ -97,6 +94,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../library-sp18/javalib" />
@@ -119,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IntListTest.testDcatenate">
+  <component name="RunManager" selected="JUnit.IntListTest.testCatenate">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -213,8 +211,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntListTest.testDcatenate" />
         <item itemvalue="JUnit.IntListTest.testCatenate" />
+        <item itemvalue="JUnit.IntListTest.testDcatenate" />
         <item itemvalue="JUnit.IntListTest.testSquareListRecursive" />
         <item itemvalue="JUnit.IntListTest.testdSquareList" />
         <item itemvalue="JUnit.IntListTest" />
@@ -231,20 +229,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561974940613</updated>
-      <workItem from="1561974942335" duration="7901000" />
+      <workItem from="1561974942335" duration="8329000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IntListTest_testDcatenate - 2019.07.01 at 21h 00m 23s.xml">
-      <configuration name="IntListTest.testDcatenate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IntListTest_testDcatenate - 2019.07.01 at 21h 10m 51s.xml">
-      <configuration name="IntListTest.testDcatenate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IntListTest_testDcatenate - 2019.07.01 at 21h 12m 40s.xml">
-      <configuration name="IntListTest.testDcatenate" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="IntListTest_testDcatenate - 2019.07.01 at 21h 13m 10s.xml">
       <configuration name="IntListTest.testDcatenate" configurationId="JUnit" />
     </history-entry>
@@ -266,9 +255,27 @@
     <history-entry file="IntListTest_testDcatenate - 2019.07.01 at 21h 26m 44s.xml">
       <configuration name="IntListTest.testDcatenate" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IntListTest_testCatenate - 2019.07.01 at 21h 37m 38s.xml">
+      <configuration name="IntListTest.testCatenate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IntListTest_testCatenate - 2019.07.01 at 21h 38m 12s.xml">
+      <configuration name="IntListTest.testCatenate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IntListTest_testCatenate - 2019.07.01 at 21h 38m 19s.xml">
+      <configuration name="IntListTest.testCatenate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7901000" />
+    <option name="totallyTimeSpent" value="8329000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
@@ -291,11 +298,11 @@
       <window_info anchor="bottom" id="Version Control" weight="0.32937366" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26565874" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26457882" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32181427" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
@@ -321,7 +328,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Intlist/IntList.java</url>
-          <line>89</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -383,10 +390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Intlist/IntList.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="22">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -397,17 +404,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+    <entry file="file://$PROJECT_DIR$/Intlist/IntListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        <state relative-caret-position="717">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Intlist/IntListTest.java">
+    <entry file="file://$PROJECT_DIR$/Intlist/IntList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+        <state relative-caret-position="104">
+          <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
         </state>
       </provider>
     </entry>
