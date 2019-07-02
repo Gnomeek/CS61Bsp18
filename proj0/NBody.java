@@ -79,7 +79,7 @@ public class NBody {
         for(int i = 0; i < planets.length; i += 1){
             StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n"
                     ,planets[i].xxPos, planets[i].yyPos, planets[i].xxVel
-                    ,planets[i].yyVel, planets[i].mass, planets[i].imgFileName)
+                    ,planets[i].yyVel, planets[i].mass, planets[i].imgFileName);
         }
 
 
