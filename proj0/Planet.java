@@ -54,7 +54,7 @@ public class Planet {
     public double calcNetForceExertedByX(Planet[] planets){
         double NetForceX = 0;
         for (int i = 0; i < planets.length; i += 1){
-            if(!this.equals(this)){
+            if(!this.equals(planets[i])){
                 NetForceX += this.calcForceExertedByX(planets[i]);
             }
         }
@@ -64,7 +64,7 @@ public class Planet {
     public double calcNetForceExertedByY(Planet[] planets){
         double NetForceY = 0;
         for (int i = 0; i < planets.length; i += 1){
-            if(!this.equals(this)){
+            if(!this.equals(planets[i])){
                 NetForceY += this.calcForceExertedByY(planets[i]);
             }
         }
@@ -83,6 +83,7 @@ public class Planet {
 
     /** draw planet itself in the starfield */
     public void draw(){
-        StdDraw.picture(this.xxPos, this.yyPos, this.imgFileName);
+        String imgpath = "images/" + this.imgFileName;
+        StdDraw.picture(this.xxPos, this.yyPos, imgpath);
     }
 }

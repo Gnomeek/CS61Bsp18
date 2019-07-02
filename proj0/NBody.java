@@ -33,9 +33,9 @@ public class NBody {
             double yV = in.readDouble();
             double m = in.readDouble();
             String img = in.readString();
-            String imgPath = "images/"+ img;
+            //String imgPath = "images/"+ img; move to Planet.draw() to pass the Autograder.
 
-            planets.add(new Planet(xP, yP, xV, yV, m, imgPath));
+            planets.add(new Planet(xP, yP, xV, yV, m, img));
         }
         // Convert ArrayList to normal static Array to pass the AutoGrader
         Planet planet[] = new Planet[planets.size()];
@@ -75,11 +75,11 @@ public class NBody {
         }
 
         StdOut.printf("%d\n", planets.length);
-        StdOut.printf("%.2e\n",radius);
-        for(int i = 0; i < planets.length; i += 1){
-            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n"
-                    ,planets[i].xxPos, planets[i].yyPos, planets[i].xxVel
-                    ,planets[i].yyVel, planets[i].mass, planets[i].imgFileName);
+        StdOut.printf("%.2e\n", radius);
+        for (int i = 0; i < planets.length; i++) {
+            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+                    planets[i].xxPos, planets[i].yyPos, planets[i].xxVel,
+                    planets[i].yyVel, planets[i].mass, planets[i].imgFileName);
         }
 
 
