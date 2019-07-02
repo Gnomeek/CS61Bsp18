@@ -41,12 +41,12 @@ public class Planet {
 
     /** calculate the force exerted from one planet to another in the x,y direction*/
     public double calcForceExertedByX(Planet b){
-        double xDistance = this.xxPos - b.xxPos;
+        double xDistance = b.xxPos - this.xxPos;
         return this.calcForceExertedBy(b) * xDistance / this.calcDistance(b);
     }
 
     public double calcForceExertedByY(Planet b){
-        double yDistance = this.yyPos - b.yyPos;
+        double yDistance = b.yyPos - this.yyPos;
         return this.calcForceExertedBy(b) * yDistance / this.calcDistance(b);
     }
 

@@ -52,10 +52,12 @@ public class NBody {
         double radius = readRadius(filename);
         Planet[] planets = readPlanets(filename);
 
+        StdAudio.play("audio/2001.mid");
         StdDraw.enableDoubleBuffering();
         StdDraw.setScale(-radius, radius);
         StdDraw.clear();
         //StdDraw.picture(0,0,"images/starfield.jpg");
+
 
         for(int time = 0; time <= T; time += dt){
 
