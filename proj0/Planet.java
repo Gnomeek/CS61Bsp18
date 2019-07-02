@@ -58,7 +58,7 @@ public class Planet {
                 NetForceX += this.calcForceExertedByX(planets[i]);
             }
         }
-        return Math.abs(NetForceX);
+        return NetForceX;
     }
 
     public double calcNetForceExertedByY(Planet[] planets){
@@ -68,7 +68,7 @@ public class Planet {
                 NetForceY += this.calcForceExertedByY(planets[i]);
             }
         }
-        return Math.abs(NetForceY);
+        return NetForceY;
     }
 
     /** calculate the accelerate caused by the forces exerted on the planet */
