@@ -43,5 +43,25 @@ public class ArrayDequeTest {
         assertEquals("b", ad3.removeLast());
     }
 
+    @Test
+    public void testGet() {
+        ArrayDeque<Integer> ad5 = new ArrayDeque<>();
+        ad5.addFirst(0);
+        ad5.removeFirst();
+        ad5.addFirst(2);
+        int result = ad5.get(0);
+
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void testNegativeSize() {
+        ArrayDeque<Integer> ad6 = new ArrayDeque<>();
+        ad6.removeFirst();
+        ad6.removeFirst();
+        ad6.removeFirst();
+
+        assertEquals(0, ad6.size());
+    }
 
 }

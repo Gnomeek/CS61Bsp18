@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ccf861a-af12-4e52-85fb-df89c4dc5e9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArrayDequeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,23 +17,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArrayDequeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-179">
-              <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+            <state relative-caret-position="459">
+              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding>
+                <element signature="method#testAddGet#0;class#ArrayDequeTest#0" />
+                <element signature="method#testPrintDeque#0;class#ArrayDequeTest#0" />
+                <element signature="method#testRemove#0;class#ArrayDequeTest#0" />
                 <element signature="e#777#785#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArrayDeque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="125" column="51" lean-forward="true" selection-start-line="125" selection-start-column="51" selection-end-line="125" selection-end-column="51" />
+            <state relative-caret-position="393">
+              <caret line="190" column="49" selection-start-line="190" selection-start-column="49" selection-end-line="190" selection-end-column="49" />
               <folding>
                 <element signature="method#checkUsage#0;class#ArrayDeque#0" />
                 <element signature="method#resize#0;class#ArrayDeque#0" />
@@ -41,6 +54,8 @@
                 <element signature="method#isEmpty#0;class#ArrayDeque#0" />
                 <element signature="method#size#0;class#ArrayDeque#0" />
                 <element signature="method#printDeque#0;class#ArrayDeque#0" />
+                <element signature="method#rmpointerFirst#0;class#ArrayDeque#0" />
+                <element signature="method#rmpointerLast#0;class#ArrayDeque#0" />
               </folding>
             </state>
           </provider>
@@ -69,10 +84,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ArrayDequeTest.java" />
         <option value="$PROJECT_DIR$/LinkedListDequeTest.java" />
         <option value="$PROJECT_DIR$/LinkedListDeque.java" />
         <option value="$PROJECT_DIR$/ArrayDeque.java" />
+        <option value="$PROJECT_DIR$/ArrayDequeTest.java" />
       </list>
     </option>
   </component>
@@ -130,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayDequeTest">
+  <component name="RunManager" selected="JUnit.ArrayDequeTest.testNegativeSize">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -153,11 +168,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayDequeTest.testAddFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayDequeTest.testGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1a" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayDequeTest" />
-      <option name="METHOD_NAME" value="testAddFirst" />
+      <option name="METHOD_NAME" value="testGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayDequeTest.testNegativeSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1a" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ArrayDequeTest" />
+      <option name="METHOD_NAME" value="testNegativeSize" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -180,17 +206,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayDequeTest" />
       <option name="METHOD_NAME" value="testRemove" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkedListDequeTest.testGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1a" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LinkedListDequeTest" />
-      <option name="METHOD_NAME" value="testGet" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -224,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArrayDequeTest.testNegativeSize" />
+        <item itemvalue="JUnit.ArrayDequeTest.testGet" />
         <item itemvalue="JUnit.ArrayDequeTest" />
         <item itemvalue="JUnit.ArrayDequeTest.testRemove" />
         <item itemvalue="JUnit.ArrayDequeTest.testPrintDeque" />
-        <item itemvalue="JUnit.ArrayDequeTest.testAddFirst" />
-        <item itemvalue="JUnit.LinkedListDequeTest.testGet" />
       </list>
     </recent_temporary>
   </component>
@@ -243,20 +258,11 @@
       <option name="presentableId" value="Default" />
       <updated>1562204064931</updated>
       <workItem from="1562204072126" duration="8924000" />
-      <workItem from="1562223974769" duration="14602000" />
+      <workItem from="1562223974769" duration="16789000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArrayDequeTest_testAddFirst - 2019.07.04 at 16h 55m 56s.xml">
-      <configuration name="ArrayDequeTest.testAddFirst" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayDequeTest_testPrintDeque - 2019.07.04 at 17h 00m 17s.xml">
-      <configuration name="ArrayDequeTest.testPrintDeque" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayDequeTest - 2019.07.04 at 17h 03m 28s.xml">
-      <configuration name="ArrayDequeTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArrayDequeTest_testRemove - 2019.07.04 at 17h 16m 44s.xml">
       <configuration name="ArrayDequeTest.testRemove" configurationId="JUnit" />
     </history-entry>
@@ -278,9 +284,18 @@
     <history-entry file="ArrayDequeTest - 2019.07.04 at 18h 09m 39s.xml">
       <configuration name="ArrayDequeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ArrayDequeTest - 2019.07.04 at 20h 44m 22s.xml">
+      <configuration name="ArrayDequeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArrayDequeTest_testGet - 2019.07.04 at 21h 18m 26s.xml">
+      <configuration name="ArrayDequeTest.testGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArrayDequeTest_testNegativeSize - 2019.07.04 at 21h 19m 41s.xml">
+      <configuration name="ArrayDequeTest.testNegativeSize" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23526000" />
+    <option name="totallyTimeSpent" value="25713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -304,7 +319,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32937366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -316,7 +331,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info active="true" anchor="bottom" id="Style Checker" order="14" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Style Checker" order="14" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -391,27 +406,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArrayDequeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding>
-            <element signature="e#777#785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArrayDeque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="125" column="51" lean-forward="true" selection-start-line="125" selection-start-column="51" selection-end-line="125" selection-end-column="51" />
+        <state relative-caret-position="393">
+          <caret line="190" column="49" selection-start-line="190" selection-start-column="49" selection-end-line="190" selection-end-column="49" />
           <folding>
             <element signature="method#checkUsage#0;class#ArrayDeque#0" />
             <element signature="method#resize#0;class#ArrayDeque#0" />
@@ -420,6 +418,28 @@
             <element signature="method#isEmpty#0;class#ArrayDeque#0" />
             <element signature="method#size#0;class#ArrayDeque#0" />
             <element signature="method#printDeque#0;class#ArrayDeque#0" />
+            <element signature="method#rmpointerFirst#0;class#ArrayDeque#0" />
+            <element signature="method#rmpointerLast#0;class#ArrayDeque#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinkedListDeque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArrayDequeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding>
+            <element signature="method#testAddGet#0;class#ArrayDequeTest#0" />
+            <element signature="method#testPrintDeque#0;class#ArrayDequeTest#0" />
+            <element signature="method#testRemove#0;class#ArrayDequeTest#0" />
+            <element signature="e#777#785#0" expanded="true" />
           </folding>
         </state>
       </provider>

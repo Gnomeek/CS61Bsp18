@@ -137,6 +137,11 @@ public class ArrayDeque<T> {
     public T removeFirst() {
         int index = movepointerFirst();
         T temp = this.items[index];
+
+        if (temp == null) {
+            return null;
+        }
+
         this.items[index] = null;
 
         size -= 1;
@@ -151,6 +156,11 @@ public class ArrayDeque<T> {
     public T removeLast() {
         int index = movepointerLast();
         T temp = this.items[index];
+
+        if (temp == null) {
+            return null;
+        }
+
         this.items[index] = null;
 
         size -= 1;
@@ -166,6 +176,18 @@ public class ArrayDeque<T> {
         if (index >= this.items.length) {
             return null;
         }
-        return this.items[index];
+
+        if (nextFirst > nextLast) {
+            if (nextFirst == this.items.length) {
+                return this.items[index];
+            } else {
+                if (index < this.items.length - nextFirst) {
+                    return this.items[nextFirst + 1 + index];
+                } else {
+                    return this.items[index - this.items.length - nextFirst];
+                }
+            }
+        }
+        return this.items[index + nextFirst + 1];
     }
 }
