@@ -71,6 +71,7 @@ public class LinkedListDeque<T> {
         T ptr = this.sentinel.next.item;
         this.sentinel.next = this.sentinel.next.next;
         this.sentinel.next.prev = this.sentinel;
+        size -= 1;
         return ptr;
     }
 
@@ -83,6 +84,7 @@ public class LinkedListDeque<T> {
         T ptr = this.sentinel.prev.item;
         this.sentinel.prev = this.sentinel.prev.prev;
         this.sentinel.prev.next = this.sentinel;
+        size -= 1;
         return ptr;
     }
 
