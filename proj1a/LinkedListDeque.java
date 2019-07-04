@@ -64,11 +64,11 @@ public class LinkedListDeque<T> {
 
     /** Removes and returns the item at the front of the DLList.
      *  If no such item exists, returns null */
-    public DLLnode removeFirst() {
-        if (this.sentinel.next == this.sentinel) {
+    public T removeFirst() {
+        if (size == 0) {
             return null;
         }
-        DLLnode ptr = this.sentinel.next;
+        T ptr = this.sentinel.next.item;
         this.sentinel.next = this.sentinel.next.next;
         this.sentinel.next.prev = this.sentinel;
         return ptr;
@@ -76,11 +76,11 @@ public class LinkedListDeque<T> {
 
     /** Removes and returns the item at the back of the DDList.
      * If no such item exists, returns null */
-    public DLLnode removeLast() {
-        if (this.sentinel.prev == this.sentinel) {
+    public T removeLast() {
+        if (size == 0) {
             return null;
         }
-        DLLnode ptr = this.sentinel.prev;
+        T ptr = this.sentinel.prev.item;
         this.sentinel.prev = this.sentinel.prev.prev;
         this.sentinel.prev.next = this.sentinel;
         return ptr;
@@ -88,23 +88,23 @@ public class LinkedListDeque<T> {
 
     /** Get the item at the given index, If no such item exists,
      * returns null. not to alter the DLList */
-    public DLLnode get(int index) {
+    public T get(int index) {
         DLLnode ptr = this.sentinel.next;
         for (int i = 0; i < index; i += 1) {
             ptr = ptr.next;
         }
-        return ptr;
+        return ptr.item;
     }
 
     /** Get the item at the given index recursively */
-    public DLLnode getRecursive(int index) {
+    public T getRecursive(int index) {
         DLLnode ptr = this.sentinel.next;
         return getRecursiveHelper(index, ptr);
     }
 
-    private DLLnode getRecursiveHelper(int i, DLLnode d) {
+    private T getRecursiveHelper(int i, DLLnode d) {
         if (i == 0) {
-            return d;
+            return d.item;
         }
         return getRecursiveHelper(i - 1, d.next);
     }
