@@ -1,6 +1,6 @@
-public class ArrayDeque<Gnome> {
+public class ArrayDeque<T> {
 
-    private Gnome[] items;
+    private T[] items;
     private int size;
     private int nextFirst;
     private int nextLast;
@@ -8,7 +8,7 @@ public class ArrayDeque<Gnome> {
 
     /** make an empty ArrayDeque */
     public ArrayDeque() {
-        items = (Gnome[]) new Object[8];
+        items = (T[]) new Object[8];
         size = 0;
         nextFirst = 4;
         nextLast = 5;
@@ -16,35 +16,33 @@ public class ArrayDeque<Gnome> {
     }
 
     /** add the item to the first of the ArrayDeque */
-    public void addFirst(Gnome i) {
+    public void addFirst(T i) {
         resize();
         this.items[nextFirst] = i;
-        if(nextFirst == 0){
+        if (nextFirst == 0) {
             nextFirst = items.length - 1;
-        }
-        else{
+        } else {
             nextFirst -= 1;
         }
         size += 1;
     }
 
     /** add the item to the last of the ArrayDeque */
-    public void addLast(Gnome i) {
+    public void addLast(T i) {
         resize();
         this.items[nextLast] = i;
 
-        if(nextLast == items.length - 1){
+        if (nextLast == items.length - 1) {
             nextLast = 0;
-        }
-        else{
+        } else {
             nextLast += 1;
         }
         size += 1;
     }
 
     /** return true if the ArrayDeque is empty, false otherwise */
-    public boolean isEmpty(){
-        if(size == 0) {
+    public boolean isEmpty() {
+        if (size == 0) {
             return true;
         }
         return false;
@@ -57,21 +55,21 @@ public class ArrayDeque<Gnome> {
 
     /** print the items in the ArrayDeque from the first to last, separated by a space */
     public void printDeque() {
-        for (Gnome p : items) {
+        for (T p : items) {
             System.out.print(p + " ");
         }
         System.out.print("\n");
     }
 
     /** remove the first item in the ArrayDeque and return it */
-    public Gnome removeFirst() {
-        Gnome temp = this.items[nextFirst + 1];
+    public T removeFirst() {
+        T temp = this.items[nextFirst + 1];
         this.items[nextFirst + 1] = null;
-        if(size == 0){
+        if (size == 0) {
             return null;
         }
 
-        if(nextFirst == items.length - 1){
+        if (nextFirst == items.length - 1) {
             temp = this.items[0];
             this.items[0] = null;
         }
@@ -82,14 +80,14 @@ public class ArrayDeque<Gnome> {
     }
 
     /** remove the last item in the ArrayDeque and return it */
-    public Gnome removeLast(){
-        Gnome temp = this.items[nextLast - 1];
+    public T removeLast() {
+        T temp = this.items[nextLast - 1];
         this.items[nextLast - 1] = null;
-        if(size == 0){
+        if (size == 0) {
             return null;
         }
 
-        if(nextLast == 0){
+        if (nextLast == 0) {
             temp = this.items[items.length - 1];
             this.items[items.length - 1] = null;
         }
@@ -100,7 +98,7 @@ public class ArrayDeque<Gnome> {
     }
 
     /** get the item at the given index and return it */
-    public Gnome get(int index) {
+    public T get(int index) {
         return this.items[index];
     }
 
@@ -108,18 +106,17 @@ public class ArrayDeque<Gnome> {
         return (usage < 0.25 && items.length > 16);
     }
 
-    public void resize(){
-        if(checkUsage() || size == items.length) {
+    public void resize() {
+        if (checkUsage() || size == items.length) {
             int targetSize = items.length;
 
             if (checkUsage()) {
                 targetSize /= 2;
-            }
-            else{
+            } else {
                 targetSize *= 2;
             }
 
-            Gnome[] newItems = (Gnome[]) new Object[targetSize];
+            T[] newItems = (T[]) new Object[targetSize];
 
             int maxIndex = 0;
             int startIndex = 0;
@@ -139,8 +136,7 @@ public class ArrayDeque<Gnome> {
                 nextFirst = 0;
                 nextLast = maxIndex - startIndex + 2;
 
-            }
-            else {
+            } else {
                 maxIndex = items.length;
                 startIndex = 0;
                 System.arraycopy(items, startIndex, newItems, 1, maxIndex - startIndex);

@@ -1,11 +1,11 @@
-public class LinkedListDeque<Gnome> {
+public class LinkedListDeque<T> {
 
     /** Constructor */
     public class DLLnode {
-        public Gnome item;
-        public DLLnode prev;
-        public DLLnode next;
-        public DLLnode(Gnome i, DLLnode pre, DLLnode nex) {
+        private T item;
+        private DLLnode prev;
+        private DLLnode next;
+        public DLLnode(T i, DLLnode pre, DLLnode nex) {
             item = i;
             prev = pre;
             next = nex;
@@ -23,7 +23,7 @@ public class LinkedListDeque<Gnome> {
     }
 
     /** add the item to the first of the DLList */
-    public void addFirst(Gnome i){
+    public void addFirst(T i) {
         DLLnode newItem = new DLLnode(i, sentinel, sentinel.next);
         sentinel.next.prev = newItem;
         sentinel.next = newItem;
@@ -31,7 +31,7 @@ public class LinkedListDeque<Gnome> {
     }
 
     /** add the item to the last of the DLList */
-    public void addLast(Gnome i) {
+    public void addLast(T i) {
         DLLnode newItem = new DLLnode(i, sentinel.prev, sentinel);
         sentinel.prev.next = newItem;
         sentinel.prev = newItem;
@@ -40,7 +40,7 @@ public class LinkedListDeque<Gnome> {
 
 
     /** Returns true if DlList is empty, false otherwise */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         if (size == 0) {
             return true;
         }
@@ -55,16 +55,17 @@ public class LinkedListDeque<Gnome> {
     /** Prints the items in the DLList from first to last, separated by a space */
     public void printDeque() {
         DLLnode ptr = this.sentinel;
-        while(ptr.next != this.sentinel) {
+        while (ptr.next != this.sentinel) {
             System.out.print(ptr.next.item + " ");
             ptr = ptr.next;
         }
         System.out.println();
     }
 
-    /** Removes and returns the item at the front of the DLList. If no such item exists, returns null */
+    /** Removes and returns the item at the front of the DLList.
+     *  If no such item exists, returns null */
     public DLLnode removeFirst() {
-        if(this.sentinel.next == this.sentinel) {
+        if (this.sentinel.next == this.sentinel) {
             return null;
         }
         DLLnode ptr = this.sentinel.next;
@@ -73,9 +74,10 @@ public class LinkedListDeque<Gnome> {
         return ptr;
     }
 
-    /** Removes and returns the item at the back of the DDList. If no such item exists, returns null */
+    /** Removes and returns the item at the back of the DDList.
+     * If no such item exists, returns null */
     public DLLnode removeLast() {
-        if(this.sentinel.prev == this.sentinel) {
+        if (this.sentinel.prev == this.sentinel) {
             return null;
         }
         DLLnode ptr = this.sentinel.prev;
@@ -84,10 +86,11 @@ public class LinkedListDeque<Gnome> {
         return ptr;
     }
 
-    /** Get the item at the given index, If no such item exists, returns null. not to alter the DLList */
+    /** Get the item at the given index, If no such item exists,
+     * returns null. not to alter the DLList */
     public DLLnode get(int index) {
         DLLnode ptr = this.sentinel.next;
-        for(int i = 0; i < index; i += 1){
+        for (int i = 0; i < index; i += 1) {
             ptr = ptr.next;
         }
         return ptr;
@@ -100,7 +103,7 @@ public class LinkedListDeque<Gnome> {
     }
 
     private DLLnode getRecursiveHelper(int i, DLLnode d) {
-        if(i == 0){
+        if (i == 0) {
             return d;
         }
         return getRecursiveHelper(i - 1, d.next);
