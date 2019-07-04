@@ -73,7 +73,7 @@ public class ArrayDeque<T> {
             nextFirst -= 1;
         }
 
-        usage = (double)size / (double)items.length;
+        usage = (double) size / (double) items.length;
     }
 
     /** add the item to the last of the ArrayDeque */
@@ -89,7 +89,7 @@ public class ArrayDeque<T> {
             nextLast += 1;
         }
 
-        usage = (double)size / (double)items.length;
+        usage = (double) size / (double) items.length;
     }
 
     /** return true if the ArrayDeque is empty, false otherwise */
@@ -113,40 +113,50 @@ public class ArrayDeque<T> {
         System.out.print("\n");
     }
 
+    /** move First pointer when removing element. */
+    private int movepointerFirst() {
+        if (nextFirst != items.length - 1) {
+            nextFirst += 1;
+        } else {
+            nextFirst = 0;
+        }
+        return nextFirst;
+    }
+
+    /** move Last pointer when removing element. */
+    private int movepointerLast() {
+        if (nextLast != 0) {
+            nextLast -= 1;
+        } else {
+            nextLast = items.length - 1;
+        }
+        return nextLast;
+    }
+
     /** remove the first item in the ArrayDeque and return it */
     public T removeFirst() {
-        T temp = this.items[nextFirst + 1];
-        this.items[nextFirst + 1] = null;
-        if (size == 0) {
-            return null;
-        }
-
-        if (nextFirst == items.length - 1) {
-            temp = this.items[0];
-            this.items[0] = null;
-        }
+        int index = movepointerFirst();
+        T temp = this.items[index];
+        this.items[index] = null;
 
         size -= 1;
-        usage = (double)size / (double)items.length;
+        usage = (double) size / (double) items.length;
+        nextFirst = index;
+
         resize();
         return temp;
     }
 
     /** remove the last item in the ArrayDeque and return it */
     public T removeLast() {
-        T temp = this.items[nextLast - 1];
-        this.items[nextLast - 1] = null;
-        if (size == 0) {
-            return null;
-        }
-
-        if (nextLast == 0) {
-            temp = this.items[items.length - 1];
-            this.items[items.length - 1] = null;
-        }
+        int index = movepointerLast();
+        T temp = this.items[index];
+        this.items[index] = null;
 
         size -= 1;
-        usage = (double)size / (double)items.length;
+        usage = (double) size / (double) items.length;
+        nextLast = index;
+
         resize();
         return temp;
     }
