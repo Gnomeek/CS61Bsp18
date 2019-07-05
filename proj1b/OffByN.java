@@ -6,7 +6,7 @@ public class OffByN implements CharacterComparator {
     }
 
     public boolean equalChars(char x, char y) {
-        if (x - y == DIFFER || y - x == DIFFER){
+        if (x - y == DIFFER || y - x == DIFFER) {
             return true;
         }
         return false;

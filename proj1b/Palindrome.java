@@ -1,5 +1,5 @@
 public class Palindrome {
-    static Palindrome palindrome = new Palindrome();
+    private static Palindrome palindrome = new Palindrome();
 
     /** convert a string to a list, which store char in every node's item */
     public Deque<Character> wordToDeque(String word) {
