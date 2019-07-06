@@ -8,13 +8,13 @@ public class TestArrayDequeGold {
     @Test
     public void testAddFirst() {
 
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             int randomNum = StdRandom.uniform(0, 100);
             stu.addFirst(randomNum);
             ans.addFirst(randomNum);
         }
 
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             Integer expect = ans.getRecursive(i);
             Integer actual = stu.get(i);
             assertEquals("AddFirst(" + actual + ")\n", expect, actual);
@@ -23,13 +23,13 @@ public class TestArrayDequeGold {
 
     @Test
     public void testAddLast() {
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             int randomNum = StdRandom.uniform(0, 100);
             stu.addLast(randomNum);
             ans.addLast(randomNum);
         }
 
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             Integer expect = ans.getRecursive(i);
             Integer actual = stu.get(i);
             assertEquals("AddLast(" + actual + ")\n", expect, actual);
@@ -38,13 +38,13 @@ public class TestArrayDequeGold {
 
     @Test
     public void testRemoveFirst() {
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             int randomNum = StdRandom.uniform(0, 100);
             stu.addFirst(randomNum);
             ans.addFirst(randomNum);
         }
 
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             Integer expect = ans.removeFirst();
             Integer actual = stu.removeFirst();
             assertEquals("RemoveFirst()" + actual, expect, actual);
@@ -57,14 +57,14 @@ public class TestArrayDequeGold {
     @Test
     public void testRemoveLast() {
         String errorString = "";
-        for (int i = 0; i <= 10; i += 1){
+        for (int i = 0; i <= 10; i += 1) {
             int randomNum = StdRandom.uniform(0, 100);
             stu.addFirst(randomNum);
             ans.addFirst(randomNum);
             errorString += ("addFirst(" + randomNum + ")\n");
         }
 
-        for (int i = 0; i <= 9; i += 1){
+        for (int i = 0; i <= 9; i += 1) {
             Integer expect = ans.removeLast();
             Integer actual = stu.removeLast();
             assertEquals(errorString + "removeLast()\n", expect, actual);
