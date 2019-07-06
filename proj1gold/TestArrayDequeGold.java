@@ -15,9 +15,7 @@ public class TestArrayDequeGold {
         }
 
         for (int i = 0; i <= 10; i += 1) {
-            Integer expect = ans.getRecursive(i);
-            Integer actual = stu.get(i);
-            assertEquals("AddFirst(" + actual + ")\n", expect, actual);
+            assertEquals(ans.getRecursive(i), stu.get(i));
         }
     }
 
@@ -30,9 +28,7 @@ public class TestArrayDequeGold {
         }
 
         for (int i = 0; i <= 10; i += 1) {
-            Integer expect = ans.getRecursive(i);
-            Integer actual = stu.get(i);
-            assertEquals("AddLast(" + actual + ")\n", expect, actual);
+            assertEquals(ans.getRecursive(i), stu.get(i));
         }
     }
 
@@ -45,9 +41,7 @@ public class TestArrayDequeGold {
         }
 
         for (int i = 0; i <= 10; i += 1) {
-            Integer expect = ans.removeFirst();
-            Integer actual = stu.removeFirst();
-            assertEquals("RemoveFirst()" + actual, expect, actual);
+            assertEquals(ans.removeFirst(), stu.removeFirst());
         }
 
 
