@@ -47,9 +47,20 @@ public class TestArrayDequeGold {
 
     }
 
+    @Test
+    public void testRemoveLast1() {
+        String errorString = "";
+        for (int i = 0; i <= 10; i += 1) {
+            int randomNum = StdRandom.uniform(0, 100);
+            stu.addFirst(randomNum);
+            ans.addFirst(randomNum);
+            assertEquals(errorString + "removeLast()\n", ans.removeLast(), stu.removeLast());
+        }
+    }
+
     // ERROR OCCUR
     @Test
-    public void testRemoveLast() {
+    public void testRemoveLast2() {
         String errorString = "";
         for (int i = 0; i <= 10; i += 1) {
             int randomNum = StdRandom.uniform(0, 100);
@@ -58,7 +69,7 @@ public class TestArrayDequeGold {
             errorString += ("addFirst(" + randomNum + ")\n");
         }
 
-        for (int i = 0; i <= 9; i += 1) {
+        for (int i = 0; i <= 10; i += 1) {
             Integer expect = ans.removeLast();
             Integer actual = stu.removeLast();
             assertEquals(errorString + "removeLast()\n", expect, actual);

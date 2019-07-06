@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="309">
+              <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -140,14 +140,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AssertEqualsStringDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AssertEqualsStringDemo" />
-      <module name="proj1gold" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -159,17 +151,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestArrayDequeGold.testAddLast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1gold" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
-      <option name="METHOD_NAME" value="testAddLast" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -191,6 +172,28 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
       <option name="METHOD_NAME" value="testRemoveLast" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestArrayDequeGold.testRemoveLast1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1gold" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
+      <option name="METHOD_NAME" value="testRemoveLast1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestArrayDequeGold.testRemoveLast2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1gold" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
+      <option name="METHOD_NAME" value="testRemoveLast2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -225,10 +228,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestArrayDequeGold" />
+        <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast2" />
+        <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast1" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveFirst" />
-        <item itemvalue="Application.AssertEqualsStringDemo" />
-        <item itemvalue="JUnit.TestArrayDequeGold.testAddLast" />
       </list>
     </recent_temporary>
   </component>
@@ -242,14 +245,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562392953053</updated>
-      <workItem from="1562392961196" duration="6063000" />
+      <workItem from="1562392961196" duration="6465000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestArrayDequeGold - 2019.07.06 at 14h 53m 33s.xml">
-      <configuration name="TestArrayDequeGold" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestArrayDequeGold_testRemoveLast - 2019.07.06 at 16h 02m 16s.xml">
       <configuration name="TestArrayDequeGold.testRemoveLast" configurationId="JUnit" />
     </history-entry>
@@ -277,9 +277,12 @@
     <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 12m 15s.xml">
       <configuration name="TestArrayDequeGold" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 19m 04s.xml">
+      <configuration name="TestArrayDequeGold" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6063000" />
+    <option name="totallyTimeSpent" value="6465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
@@ -352,8 +355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        <state relative-caret-position="309">
+          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
         </state>
       </provider>
     </entry>
