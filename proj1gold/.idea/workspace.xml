@@ -23,8 +23,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="540">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+              <folding>
+                <element signature="method#testAddFirst#0;class#TestArrayDequeGold#0" />
+                <element signature="method#testAddLast#0;class#TestArrayDequeGold#0" />
+                <element signature="method#testRemoveFirst#0;class#TestArrayDequeGold#0" />
+                <element signature="method#testRemoveLast#0;class#TestArrayDequeGold#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestArrayDequeGold">
+  <component name="RunManager" selected="JUnit.TestArrayDequeGold.testRemoveLast2">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -227,8 +233,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestArrayDequeGold" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast2" />
+        <item itemvalue="JUnit.TestArrayDequeGold" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast1" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveLast" />
         <item itemvalue="JUnit.TestArrayDequeGold.testRemoveFirst" />
@@ -245,20 +251,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562392953053</updated>
-      <workItem from="1562392961196" duration="6465000" />
+      <workItem from="1562392961196" duration="6877000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestArrayDequeGold_testRemoveLast - 2019.07.06 at 16h 02m 16s.xml">
-      <configuration name="TestArrayDequeGold.testRemoveLast" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 03m 03s.xml">
-      <configuration name="TestArrayDequeGold" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 04m 18s.xml">
-      <configuration name="TestArrayDequeGold" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestArrayDequeGold_testRemoveFirst - 2019.07.06 at 16h 04m 56s.xml">
       <configuration name="TestArrayDequeGold.testRemoveFirst" configurationId="JUnit" />
     </history-entry>
@@ -280,9 +277,18 @@
     <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 19m 04s.xml">
       <configuration name="TestArrayDequeGold" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestArrayDequeGold_testRemoveLast1 - 2019.07.06 at 16h 25m 48s.xml">
+      <configuration name="TestArrayDequeGold.testRemoveLast1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestArrayDequeGold_testRemoveLast2 - 2019.07.06 at 16h 25m 52s.xml">
+      <configuration name="TestArrayDequeGold.testRemoveLast2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 25m 58s.xml">
+      <configuration name="TestArrayDequeGold" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6465000" />
+    <option name="totallyTimeSpent" value="6877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
@@ -355,8 +361,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="540">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="method#testAddFirst#0;class#TestArrayDequeGold#0" />
+            <element signature="method#testAddLast#0;class#TestArrayDequeGold#0" />
+            <element signature="method#testRemoveFirst#0;class#TestArrayDequeGold#0" />
+            <element signature="method#testRemoveLast#0;class#TestArrayDequeGold#0" />
+          </folding>
         </state>
       </provider>
     </entry>

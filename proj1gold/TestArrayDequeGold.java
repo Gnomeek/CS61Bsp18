@@ -72,7 +72,8 @@ public class TestArrayDequeGold {
         for (int i = 0; i <= 10; i += 1) {
             Integer expect = ans.removeLast();
             Integer actual = stu.removeLast();
-            assertEquals(errorString + "removeLast()\n", expect, actual);
+            errorString += "removeLast()\n";
+            assertEquals(errorString, expect, actual);
         }
     }
 
