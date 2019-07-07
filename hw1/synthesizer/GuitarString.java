@@ -1,6 +1,6 @@
 package synthesizer;
 
-import java.nio.Buffer;
+//import java.nio.Buffer;
 
 //Make sure this class is public
 public class GuitarString {
@@ -22,7 +22,7 @@ public class GuitarString {
         int capacity = (int) Math.round(SR / frequency);
         buffer = new ArrayRingBuffer<>(capacity);
 
-        while (! buffer.isFull()) {
+        while (!buffer.isFull()) {
             buffer.enqueue(0.0);
         }
     }
@@ -35,11 +35,11 @@ public class GuitarString {
         //double r = Math.random() - 0.5;
         //
         //Make sure that your random numbers are different from each other.
-        while (! buffer.isEmpty()) {
+        while (!buffer.isEmpty()) {
             buffer.dequeue();
         }
 
-        while (! buffer.isFull()) {
+        while (!buffer.isFull()) {
             double r = Math.random() - 0.5;
             buffer.enqueue(r);
         }

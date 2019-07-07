@@ -5,11 +5,11 @@ import java.util.Iterator;
 //Make sure to make this class extend AbstractBoundedQueue<t>
 public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Index for the next dequeue or peek. */
-    public int first;
+    private int first;
     /* Index for the next enqueue. */
-    public int last;
+    private int last;
     /* Array for storing the buffer data. */
-    public T[] rb;
+    private T[] rb;
 
 
     /**
@@ -34,7 +34,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     @Override
     public void enqueue(T x) {
         //Enqueue the item. Don't forget to increase fillCount and update last.
-        if (! iterator().hasNext()) {
+        if (!iterator().hasNext()) {
             throw new RuntimeException("Ring buffer overflow");
         }
         rb[last] = x;
@@ -102,7 +102,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     private class ArrayRingIterator<T> implements Iterator<T> {
         private int ptr;
 
-        public ArrayRingIterator() {
+        ArrayRingIterator() {
             ptr = first;
         }
 
@@ -115,7 +115,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         }
 
         public T next() {
-            T nextNode = (T)rb[ptr];
+            T nextNode = (T) rb[ptr];
             if (ptr == capacity - 1) {
                 ptr = 0;
             }
