@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1b/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestArrayDequeGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestArrayDequeGold.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +22,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="329">
               <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding>
                 <element signature="method#testAddFirst#0;class#TestArrayDequeGold#0" />
@@ -251,14 +250,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562392953053</updated>
-      <workItem from="1562392961196" duration="6877000" />
+      <workItem from="1562392961196" duration="7382000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestArrayDequeGold_testRemoveFirst - 2019.07.06 at 16h 04m 56s.xml">
-      <configuration name="TestArrayDequeGold.testRemoveFirst" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestArrayDequeGold_testRemoveLast - 2019.07.06 at 16h 05m 06s.xml">
       <configuration name="TestArrayDequeGold.testRemoveLast" configurationId="JUnit" />
     </history-entry>
@@ -286,13 +282,15 @@
     <history-entry file="TestArrayDequeGold - 2019.07.06 at 16h 25m 58s.xml">
       <configuration name="TestArrayDequeGold" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestArrayDequeGold_testRemoveLast2 - 2019.07.06 at 16h 32m 38s.xml">
+      <configuration name="TestArrayDequeGold.testRemoveLast2" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6877000" />
+    <option name="totallyTimeSpent" value="7382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -361,7 +359,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestArrayDequeGold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="329">
           <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding>
             <element signature="method#testAddFirst#0;class#TestArrayDequeGold#0" />

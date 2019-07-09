@@ -39,16 +39,52 @@ So it would be great for me to receive your stars and I hope that this can reall
 - [x] lecture6
 - [x] lab03
 - [x] lecture7
-- [ ] project1A
+- [x] project1A (have some minor problems unsolved)
 - [x] lecture8
 
 
 
 ## WEEK 4
 
-- [ ] lecture9
-- [ ] lab04
-- [ ] lecture10
-- [ ] project1B
-- [ ] project1Gold
-- [ ] lecture11
+- [x] lecture9
+- [x] lab04
+- [x] lecture10
+- [x] project1B
+- [x] project1Gold
+- [x] lecture11
+
+
+
+## WEEK 5
+
+- [x] lecture12
+- [x] lab05
+- [x] lecture13
+- [x] hw1
+- [ ] project2Phase1
+- [x] lecture14
+
+
+
+## WEEK 6
+
+- [x] hw1
+- [x] lecture15
+- [ ] project2Phase1
+- [x] lecture16
+- [ ] lab6
+
+
+
+## WEEK 7
+
+- [x] lecture17
+- [ ] project2Phase1
+- [x] lecture18
+- [ ] project2Phase2
+- [x] lecture19
+
+
+
+
+
