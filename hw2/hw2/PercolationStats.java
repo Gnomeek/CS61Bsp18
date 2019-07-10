@@ -21,7 +21,7 @@ public class PercolationStats {
         for (int i = 0; i < T; i += 1) {
             Percolation per = pf.make(N);
 
-            while (per.percolates()) {
+            while (!per.percolates()) {
                 int randomRow = StdRandom.uniform(0, N - 1);
                 int randomCol = StdRandom.uniform(0, N - 1);
                 if (!per.isOpen(randomRow, randomCol)) {
