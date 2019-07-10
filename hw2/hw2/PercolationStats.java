@@ -27,6 +27,9 @@ public class PercolationStats {
                 if (!per.isOpen(randomRow, randomCol)) {
                     per.open(randomRow, randomCol);
                 }
+                if (per.percolates()) {
+                    break;
+                }
             }
             STATS[i] = (double) per.numberOfOpenSites() / (N * N);
         }
@@ -63,10 +66,5 @@ public class PercolationStats {
      */
     public double confidenceHigh() {
         return mean() + 1.96 * stddev() / Math.sqrt(STATS.length);
-    }
-
-
-    public static void main(String[] args) {
-
     }
 }
