@@ -22,7 +22,7 @@ public class PercolationStats {
             Percolation per = pf.make(N);
 
             while (per.percolates()) {
-                int randomRow = StdRandom.uniform(0, N- 1);
+                int randomRow = StdRandom.uniform(0, N - 1);
                 int randomCol = StdRandom.uniform(0, N - 1);
                 if (!per.isOpen(randomRow, randomCol)) {
                     per.open(randomRow, randomCol);
