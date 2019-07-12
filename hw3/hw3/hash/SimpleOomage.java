@@ -23,7 +23,7 @@ public class SimpleOomage implements Oomage {
         if (o.getClass() != this.getClass()) {
             return false;
         }
-        SimpleOomage that = (SimpleOomage)o;
+        SimpleOomage that = (SimpleOomage) o;
         return this.red == that.red && this.green == that.green && this.blue == that.blue;
     }
 

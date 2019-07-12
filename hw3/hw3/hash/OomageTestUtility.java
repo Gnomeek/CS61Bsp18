@@ -12,9 +12,11 @@ public class OomageTestUtility {
          * Oomages and no bucket has more than N / 2.5 Oomages.
          */
         int[] bucketVal = new int[M];
-        for (int i = 0; i < M; i++) bucketVal[i] = 0;
+        for (int i = 0; i < M; i++) {
+            bucketVal[i] = 0;
+        }
         int totalNum = 0;
-        for (Oomage o : oomages){
+        for (Oomage o : oomages) {
             totalNum += 1;
             int bucketNum = (o.hashCode() & 0x7FFFFFFF) % M;
             bucketVal[bucketNum] += 1;
