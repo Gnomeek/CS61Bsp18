@@ -7,7 +7,7 @@ import java.util.Set;
  *  A hash table-backed Map implementation. Provides amortized constant time
  *  access to elements via get(), remove(), and put() in the best case.
  *
- *  @author Your name here
+ *  @author Will Zhao
  */
 public class MyHashMap<K, V> implements Map61B<K, V> {
 
@@ -53,19 +53,56 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
      */
     @Override
     public V get(K key) {
-        throw new UnsupportedOperationException();
+        int hashNum = hash(key);
+        return buckets[hashNum].get(key);
     }
 
     /* Associates the specified value with the specified key in this map. */
     @Override
     public void put(K key, V value) {
-        throw new UnsupportedOperationException();
+        if (loadFactor() > MAX_LF) {
+            resize();
+        }
+
+        int hashNum = hash(key);
+        if (get(key) == null) {
+            buckets[hashNum].put(key, value);
+            size += 1;
+        }
+        buckets[hashNum].put(key, value);
+
     }
+
+    /* resize */
+    private void resize() {
+        /*
+        MyHashMap<K, V> newHashMap = new MyHashMap();
+        ArrayMap<K, V>[] newBuckets = (ArrayMap<K, V>[])new Object[];
+        newHashMap.buckets = newBuckets;
+        newHashMap.size = size;
+         */
+        ArrayMap<K, V>[] tempBuckets = buckets;
+        int tempSize = size;
+        buckets = new ArrayMap[buckets.length * 2];
+        this.clear();
+        size += tempSize;
+
+        for (ArrayMap<K, V> i : tempBuckets) {
+            Set<K> keys = i.keySet();
+            for (K j : keys) {
+                V val = i.get(j);
+                int key = hash(j);
+                buckets[key].put(j, val);
+            }
+        }
+    }
+
+
 
     /* Returns the number of key-value mappings in this map. */
     @Override
     public int size() {
-        throw new UnsupportedOperationException();
+        return size;
     }
 
     //////////////// EVERYTHING BELOW THIS LINE IS OPTIONAL ////////////////
