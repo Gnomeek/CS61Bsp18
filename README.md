@@ -86,5 +86,83 @@ So it would be great for me to receive your stars and I hope that this can reall
 
 
 
+## WEEK 8
+
+- [x] lecture20
+- [x] lecture21
+- [x] hw2
+- [x] lecture22
+
+
+
+## WEEK 9
+
+- [x] lecture23
+- [x] lecture24
+- [x] lab9
+- [x] lecture25
+- [x] hw3
+
+
+
+## WEEK 10
+
+- [x] lecture26
+- [x] lab10
+- [x] lecture27
+- [x] lecture28
+
+
+
+## WEEK 11
+
+- [ ] lecture29
+- [ ] lab11
+- [ ] lecture30
+- [ ] hw4
+- [ ] lecture31
+
+
+
+## WEEK 12
+
+- [ ] lecture32
+- [ ] lab12
+- [ ] lecture33
+- [ ] project3
+- [ ] lecture34
+
+
+
+## WEEK 13
+
+- [ ] lecture35
+- [ ] lab13
+- [ ] lecture36
+- [ ] project3
+- [ ] lecture37
+
+
+
+## WEEK 14
+
+- [ ] lecture38
+- [ ] lab14
+- [ ] lecture39
+- [ ] hw5
+- [ ] lecture40
+
+
+
+## WEEK 15
+
+- [ ] lab15
+- [ ] hw6
+- [ ] hw7
+
+
+
+
+
 
 

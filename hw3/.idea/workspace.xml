@@ -4,10 +4,6 @@
     <list default="true" id="90b092d8-ca74-4957-81f3-2a9519cddced" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hw2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3/hash/HashTableVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/hash/HashTableVisualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3/hash/OomageTestUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/hash/OomageTestUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3/hash/SimpleOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/hash/SimpleOomage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3/hash/TestSimpleOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/hash/TestSimpleOomage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -80,7 +76,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw3/hash/HashTableVisualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="365">
               <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
             </state>
           </provider>
@@ -314,7 +310,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562942066392</updated>
-      <workItem from="1562942074173" duration="5486000" />
+      <workItem from="1562942074173" duration="5536000" />
     </task>
     <servers />
   </component>
@@ -351,11 +347,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5486000" />
+    <option name="totallyTimeSpent" value="5536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -364,7 +359,7 @@
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.11686233" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
@@ -378,7 +373,7 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info active="true" anchor="bottom" id="Style Checker" order="14" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Style Checker" order="14" weight="0.32972974" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Database" order="2" />
@@ -549,7 +544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3/hash/HashTableVisualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="365">
           <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
         </state>
       </provider>
