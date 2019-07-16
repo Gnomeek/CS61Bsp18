@@ -116,7 +116,7 @@ So it would be great for me to receive your stars and I hope that this can reall
 
 ## WEEK 11
 
-- [ ] lecture29
+- [x] lecture29
 - [ ] lab11
 - [ ] lecture30
 - [ ] hw4
