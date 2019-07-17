@@ -1,5 +1,7 @@
 package lab11.graphs;
 
+import edu.princeton.cs.algs4.Queue;
+
 /**
  *  @author Josh Hug
  */
@@ -31,12 +33,33 @@ public class MazeAStarPath extends MazeExplorer {
 
     /** Performs an A star search from vertex s. */
     private void astar(int s) {
-        // TODO
+        marked[s] = true;
+        Queue<Integer> openQueue = new Queue<>();
+        Queue<Integer> closeQueue = new Queue<>();
+        openQueue.enqueue(s);
+        announce();
+
+        while (!openQueue.isEmpty()) {
+            int cur = openQueue.dequeue();
+
+            for (int i : maze.adj(cur)) {
+                distTo[i] = distTo[cur] + manhattanDistance(cur, t);
+                int temp = distTo[]
+            }
+        }
     }
 
     @Override
     public void solve() {
         astar(s);
+    }
+
+    private int manhattanDistance(int n, int p) {
+        int sourceX = maze.toX(n);
+        int sourceY = maze.toY(n);
+        int targetX = maze.toX(p);
+        int targetY = maze.toY(p);
+        return Math.abs(sourceX - targetX) + Math.abs(sourceY - targetY);
     }
 
 }
