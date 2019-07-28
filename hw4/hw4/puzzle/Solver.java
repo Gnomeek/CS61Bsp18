@@ -13,7 +13,7 @@ public class Solver {
 
         SearchNode goal = null;
 
-        while(!tracker.isEmpty()) {
+        while (!tracker.isEmpty()) {
             SearchNode min = tracker.delMin();
             WorldState minWorldState = min.world();
             SearchNode minPrev = min.prev();
@@ -36,13 +36,13 @@ public class Solver {
     }
 
     /* record the node information of the graph */
-    public class SearchNode implements Comparable<SearchNode>{
+    private class SearchNode implements Comparable<SearchNode> {
         private WorldState world;
         private int moves;
         private SearchNode prev;
         private int priority;
 
-        public SearchNode(WorldState ws, int m, SearchNode p) {
+        SearchNode(WorldState ws, int m, SearchNode p) {
             world = ws;
             moves = m;
             prev = p;
