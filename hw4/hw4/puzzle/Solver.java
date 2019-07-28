@@ -5,7 +5,6 @@ import edu.princeton.cs.algs4.Stack;
 public class Solver {
     private Stack<WorldState> moved;
 
-    /** Constructor */
     public Solver(WorldState initial) {
         moved = new Stack<>();
 
@@ -28,14 +27,15 @@ public class Solver {
                     }
                 }
             }
+        }
 
-            while (goal != null) {
-                moved.push(goal.world);
-                goal = goal.prev;
-            }
+        while (goal != null) {
+            moved.push(goal.world);
+            goal = goal.prev;
         }
     }
 
+    /* record the node information of the graph */
     public class SearchNode implements Comparable<SearchNode>{
         private WorldState world;
         private int moves;
@@ -50,7 +50,7 @@ public class Solver {
         }
 
         public int compareTo(SearchNode o) {
-           return this.priority - o.priority;
+            return this.priority - o.priority;
         }
 
         public WorldState world() {
@@ -65,6 +65,7 @@ public class Solver {
             return prev;
         }
     }
+
 
     public int moves() {
         return moved.size() - 1;
