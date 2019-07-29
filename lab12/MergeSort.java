@@ -80,11 +80,14 @@ public class MergeSort {
             Queue<Item> q1 = new Queue<>();
             Queue<Item> q2 = new Queue<>();
 
-            for (int i = 0; i < size / 2; i += 1) {
-                q1.enqueue(items.dequeue());
-            }
-            while (!items.isEmpty()) {
-                q2.enqueue(items.dequeue());
+            int i = 0;
+            for (Item item : items) {
+                if (i < size / 2) {
+                    q1.enqueue(item);
+                } else {
+                    q2.enqueue(item);
+                }
+                i += 1;
             }
 
             q1 = mergeSort(q1);
