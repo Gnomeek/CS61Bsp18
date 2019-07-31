@@ -20,7 +20,7 @@ public class RadixSort {
     public static String[] sort(String[] asciis) {
         int strLength = 0;
         for (String str : asciis) {
-            strLength = strLength < str.length() ? str.length() : strLength;
+            strLength = strLength < str.length() ? strLength : str.length();
         }
 
         String[] sorted = asciis.clone();
