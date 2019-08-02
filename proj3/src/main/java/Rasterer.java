@@ -8,9 +8,21 @@ import java.util.Map;
  * not draw the output correctly.
  */
 public class Rasterer {
+    private int leftRowIndex;
+    private int rightRowIndex;
+    private int upperColIndex;
+    private int lowerColIndex;
+    private double lonPixelPerTile;
+    private double latPixelPerTile;
 
     public Rasterer() {
-        // YOUR CODE HERE
+        leftRowIndex = 0;
+        rightRowIndex = 0;
+        upperColIndex = 0;
+        lowerColIndex = 0;
+        lonPixelPerTile = 0;
+        latPixelPerTile = 0;
+
     }
 
     /**
@@ -42,11 +54,85 @@ public class Rasterer {
      *                    forget to set this to true on success! <br>
      */
     public Map<String, Object> getMapRaster(Map<String, Double> params) {
-        // System.out.println(params);
+        System.out.println(params);
+        double desiredLRLON = params.get("lrlon");
+        double desiredULLON = params.get("ullon");
+        double desiredLRLAT = params.get("lrlat");
+        double desiredULLAT = params.get("ullat");
+        double width = params.get("w");
+        double height = params.get("h");
         Map<String, Object> results = new HashMap<>();
-        System.out.println("Since you haven't implemented getMapRaster, nothing is displayed in "
-                           + "your browser.");
+
+        //deal with unsatisfied parameters
+        if (desiredULLON >= desiredLRLON || desiredULLAT <= desiredLRLAT || width <=0 || height <= 0
+            || desiredULLON < MapServer.ROOT_ULLON || desiredLRLON > MapServer.ROOT_LRLON
+            || desiredLRLAT < MapServer.ROOT_LRLAT || desiredULLAT > MapServer.ROOT_ULLAT) {
+            results.put("raster_ul_lon", 0);
+            results.put("raster_ul_lat", 0);
+            results.put("raster_lr_lon", 0);
+            results.put("raster_lr_lat", 0);
+            results.put("depth", 0);
+            results.put("query_success", false);
+            results.put("render_grid", 0);
+        }
+
+        results.put("query_success", true);
+
+        int depth = getDepth(desiredLRLON, desiredULLON, width);
+        results.put("depth", depth);
+
+        findRasterTile(depth, desiredLRLON, desiredULLON, desiredLRLAT, desiredULLAT);
+        results.put("raster_ul_lon", MapServer.ROOT_ULLON + lonPixelPerTile * leftRowIndex);
+        results.put("raster_ul_lat", MapServer.ROOT_ULLAT - latPixelPerTile * upperColIndex);
+        results.put("raster_lr_lon", MapServer.ROOT_ULLON + lonPixelPerTile * (rightRowIndex + 1));
+        results.put("raster_lr_lat", MapServer.ROOT_ULLAT - latPixelPerTile * (lowerColIndex + 1));
+
+        int rowNum = rightRowIndex - leftRowIndex + 1;
+        int colNum = lowerColIndex - upperColIndex + 1;
+        String[][] tileGrid = new String[colNum][rowNum];
+        for (int i = 0; i < colNum; i += 1) {
+            for (int j = 0; j < rowNum; j += 1) {
+                tileGrid[i][j] = ("d" + depth + "_x" + (j + leftRowIndex) +  "_y" + (i + upperColIndex) + ".png");
+            }
+        }
+        results.put("render_grid", tileGrid);
+
         return results;
     }
 
+    public static int getDepth(double desiredLRLON, double desiredULLON, double width) {
+        double desiredDDP = (desiredLRLON - desiredULLON) / width;
+        double rootDDP = (MapServer.ROOT_LRLON - MapServer.ROOT_ULLON) / MapServer.TILE_SIZE;
+        int depth = 0;
+        while (rootDDP > desiredDDP) {
+            rootDDP /= 2;
+            depth += 1;
+            if (depth >= 7) {
+                break;
+            }
+        }
+        return depth;
+    }
+
+    public void findRasterTile(int depth, double desiredLRLON, double desiredULLON,
+                                         double desiredLRLAT, double desiredULLAT){
+        lonPixelPerTile = (MapServer.ROOT_LRLON - MapServer.ROOT_ULLON) / Math.pow(2, depth);
+        latPixelPerTile = (MapServer.ROOT_ULLAT - MapServer.ROOT_LRLAT) / Math.pow(2, depth);
+
+        leftRowIndex = (int)((desiredULLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
+        rightRowIndex = (int)((desiredLRLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
+        upperColIndex = (int)((MapServer.ROOT_ULLAT - desiredULLAT) / latPixelPerTile);
+        lowerColIndex = (int)((MapServer.ROOT_ULLAT - desiredLRLAT) / latPixelPerTile);
+    }
+
+    /*
+    public static void main(String[] args) {
+        int depth = Rasterer.getDepth(-122.24053, -122.241632,892.0);
+        int i = 0;
+        int j = 0;
+        int leftRowIndex = 1;
+        int upperColIndex = 1;
+        System.out.print("d" + depth + "_x" + (i + leftRowIndex) +  "_y" + (j + upperColIndex) + ".png");
+    }
+     */
 }
