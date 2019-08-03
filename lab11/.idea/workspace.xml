@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b2e741-fd56-4a0e-86e0-bf4dd71ffa0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javalib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab11/graphs/MazeAStarPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab11/graphs/MazeAStarPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab11/graphs/MazeBreadthFirstPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab11/graphs/MazeBreadthFirstPaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab11/graphs/MazeCycles.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab11/graphs/MazeCycles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab11/graphs/maze.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab11/graphs/maze.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,8 +63,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="552" />
-    <option name="y" value="40" />
+    <option name="x" value="252" />
+    <option name="y" value="53" />
     <option name="width" value="923" />
     <option name="height" value="814" />
   </component>
@@ -180,8 +175,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="552" y="40" width="923" height="814" extended-state="0" />
-    <editor active="true" />
+    <frame x="252" y="53" width="923" height="814" extended-state="0" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -191,7 +185,7 @@
       <window_info content_ui="combo" id="Project" order="0" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32963988" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32825485" />
       <window_info anchor="bottom" id="Style Checker" weight="0.32963988" />

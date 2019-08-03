@@ -60,13 +60,12 @@ public class Rasterer {
         double desiredLRLAT = params.get("lrlat");
         double desiredULLAT = params.get("ullat");
         double width = params.get("w");
-        double height = params.get("h");
         Map<String, Object> results = new HashMap<>();
 
-        //deal with unsatisfied parameters
+        /*deal with unsatisfied parameters
         if (desiredULLON >= desiredLRLON || desiredULLAT <= desiredLRLAT || width <=0 || height <= 0
-            || desiredULLON < MapServer.ROOT_ULLON || desiredLRLON > MapServer.ROOT_LRLON
-            || desiredLRLAT < MapServer.ROOT_LRLAT || desiredULLAT > MapServer.ROOT_ULLAT) {
+            || desiredULLON > MapServer.ROOT_LRLON || desiredLRLON < MapServer.ROOT_ULLON
+            || desiredLRLAT > MapServer.ROOT_ULLAT || desiredULLAT < MapServer.ROOT_LRLAT) {
             results.put("raster_ul_lon", 0);
             results.put("raster_ul_lat", 0);
             results.put("raster_lr_lon", 0);
@@ -75,6 +74,7 @@ public class Rasterer {
             results.put("query_success", false);
             results.put("render_grid", 0);
         }
+        */
 
         results.put("query_success", true);
 
@@ -127,12 +127,16 @@ public class Rasterer {
 
     /*
     public static void main(String[] args) {
-        int depth = Rasterer.getDepth(-122.24053, -122.241632,892.0);
-        int i = 0;
-        int j = 0;
-        int leftRowIndex = 1;
-        int upperColIndex = 1;
-        System.out.print("d" + depth + "_x" + (i + leftRowIndex) +  "_y" + (j + upperColIndex) + ".png");
+        Map<String, Double> parameters = new HashMap<>();
+
+        parameters.put("lrlon", -122.2104604264636);
+        parameters.put("ullon", -122.30410170759153);
+        parameters.put("w", 1091.0);
+        parameters.put("h", 566);
+        parameters.put("ullat", 37.870213571328854);
+        parameters.put("lrlat", 37.8318576119893);
+
+        Map<String, Object> results = getMapRaster(parameters);
     }
-     */
+    */
 }

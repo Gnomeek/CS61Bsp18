@@ -117,30 +117,30 @@ So it would be great for me to receive your stars and I hope that this can reall
 ## WEEK 11
 
 - [x] lecture29
-- [ ] lab11
-- [ ] lecture30
-- [ ] hw4
-- [ ] lecture31
+- [x] lab11
+- [x] lecture30
+- [x] hw4
+- [x] lecture31
 
 
 
 ## WEEK 12
 
-- [ ] lecture32
-- [ ] lab12
-- [ ] lecture33
-- [ ] project3
-- [ ] lecture34
+- [x] lecture32
+- [x] lab12
+- [x] lecture33
+- [x] project3
+- [x] lecture34
 
 
 
 ## WEEK 13
 
-- [ ] lecture35
-- [ ] lab13
-- [ ] lecture36
+- [x] lecture35
+- [x] lab13
+- [x] lecture36
 - [ ] project3
-- [ ] lecture37
+- [x] lecture37
 
 
 
