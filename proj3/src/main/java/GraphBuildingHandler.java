@@ -2,6 +2,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -38,6 +39,11 @@ public class GraphBuildingHandler extends DefaultHandler {
                     "secondary_link", "tertiary_link"));
     private String activeState = "";
     private final GraphDB g;
+    private ArrayList<Long> possibleWay;
+    private long currentID;
+    private boolean isHighway;
+    private String wayName;
+    private int wayMaxSpeed;
 
     /**
      * Create a new GraphBuildingHandler.
@@ -68,22 +74,31 @@ public class GraphBuildingHandler extends DefaultHandler {
         if (qName.equals("node")) {
             /* We encountered a new <node...> tag. */
             activeState = "node";
-//            System.out.println("Node id: " + attributes.getValue("id"));
-//            System.out.println("Node lon: " + attributes.getValue("lon"));
-//            System.out.println("Node lat: " + attributes.getValue("lat"));
-
-            /* TODO Use the above information to save a "node" to somewhere. */
+//          System.out.println("Node id: " + attributes.getValue("id"));
+//          System.out.println("Node lon: " + attributes.getValue("lon"));
+//          System.out.println("Node lat: " + attributes.getValue("lat"));
+            currentID = Long.parseLong(attributes.getValue("id"));
+            long id = Long.parseLong(attributes.getValue("id"));
+            double lon = Double.parseDouble(attributes.getValue("lon"));
+            double lat = Double.parseDouble(attributes.getValue("lat"));
+            g.vertice.put(id, g.setNode(lon, lat));
+            /* Use the above information to save a "node" to somewhere. */
             /* Hint: A graph-like structure would be nice. */
 
         } else if (qName.equals("way")) {
             /* We encountered a new <way...> tag. */
             activeState = "way";
+            currentID = Long.parseLong(attributes.getValue("id"));
+            possibleWay = new ArrayList<>();
+            isHighway = false;
 //            System.out.println("Beginning a way...");
         } else if (activeState.equals("way") && qName.equals("nd")) {
             /* While looking at a way, we found a <nd...> tag. */
-            //System.out.println("Id of a node in this way: " + attributes.getValue("ref"));
+//          System.out.println("Id of a node in this way: " + attributes.getValue("ref"));
+            long nodeID = Long.parseLong(attributes.getValue("ref"));
+            possibleWay.add(nodeID);
 
-            /* TODO Use the above id to make "possible" connections between the nodes in this way */
+            /* Use the above id to make "possible" connections between the nodes in this way */
             /* Hint1: It would be useful to remember what was the last node in this way. */
             /* Hint2: Not all ways are valid. So, directly connecting the nodes here would be
             cumbersome since you might have to remove the connections if you later see a tag that
@@ -95,24 +110,29 @@ public class GraphBuildingHandler extends DefaultHandler {
             String k = attributes.getValue("k");
             String v = attributes.getValue("v");
             if (k.equals("maxspeed")) {
-                //System.out.println("Max Speed: " + v);
-                /* TODO set the max speed of the "current way" here. */
+//              System.out.println("Max Speed: " + v);
+                /* set the max speed of the "current way" here. */
+                wayMaxSpeed = Integer.parseInt(v.replaceAll("[^0-9]", ""));
             } else if (k.equals("highway")) {
-                //System.out.println("Highway type: " + v);
-                /* TODO Figure out whether this way and its connections are valid. */
+//              System.out.println("Highway type: " + v);
+                /* Figure out whether this way and its connections are valid. */
                 /* Hint: Setting a "flag" is good enough! */
+                isHighway = ALLOWED_HIGHWAY_TYPES.contains(v) && possibleWay.size() != 1;
             } else if (k.equals("name")) {
-                //System.out.println("Way Name: " + v);
+//              System.out.println("Way Name: " + v);
+                wayName = v;
             }
 //            System.out.println("Tag with k=" + k + ", v=" + v + ".");
         } else if (activeState.equals("node") && qName.equals("tag") && attributes.getValue("k")
                 .equals("name")) {
+            //g.vertice.get(currentID).name = attributes.getValue("v");
             /* While looking at a node, we found a <tag...> with k="name". */
-            /* TODO Create a location. */
+            /* Create a location. */
             /* Hint: Since we found this <tag...> INSIDE a node, we should probably remember which
             node this tag belongs to. Remember XML is parsed top-to-bottom, so probably it's the
             last node that you looked at (check the first if-case). */
-//            System.out.println("Node's name: " + attributes.getValue("v"));
+//          System.out.println("Node's name: " + attributes.getValue("v"));
+
         }
     }
 
@@ -133,7 +153,32 @@ public class GraphBuildingHandler extends DefaultHandler {
             /* We are done looking at a way. (We finished looking at the nodes, speeds, etc...)*/
             /* Hint1: If you have stored the possible connections for this way, here's your
             chance to actually connect the nodes together if the way is valid. */
-//            System.out.println("Finishing a way...");
+//          System.out.println("Finishing a way...");
+            if (isHighway) {
+                for (Long edgeID : possibleWay) {
+                    if (g.adjacent.get(edgeID) == null) {
+                        ArrayList<GraphDB.Edge> edges = new ArrayList<>();
+                        g.adjacent.put(edgeID, edges);
+                    }
+                }
+
+                for (int i = 0; i < possibleWay.size() - 1; i += 1) {
+                    GraphDB.Edge newEdgeF = g.setEdge(possibleWay.get(i + 1));
+                    g.adjacent.get(possibleWay.get(i)).add(newEdgeF);
+                    GraphDB.Edge newEdgeB = g.setEdge(possibleWay.get(i));
+                    g.adjacent.get(possibleWay.get(i + 1)).add(newEdgeB);
+                    if (wayMaxSpeed != 0) {
+                        newEdgeF.maxSpeed = wayMaxSpeed;
+                        newEdgeB.maxSpeed = wayMaxSpeed;
+                    }
+                    if (wayName != null) {
+                        newEdgeF.name = wayName;
+                        newEdgeB.name = wayName;
+                    }
+                }
+            }
+            wayName = null;
+            wayMaxSpeed = 0;
         }
     }
 
