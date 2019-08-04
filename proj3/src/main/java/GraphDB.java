@@ -90,9 +90,9 @@ public class GraphDB {
      */
     private void clean() {
         ArrayList<Long> unconnectedNode = new ArrayList<>();
-        for (long vertice : vertices()) {
-            if (!adjacent.containsKey(vertice)) {
-                unconnectedNode.add(vertice);
+        for (long v : vertices()) {
+            if (!adjacent.containsKey(v)) {
+                unconnectedNode.add(v);
             }
         }
 

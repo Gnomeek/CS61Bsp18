@@ -125,7 +125,7 @@ public class GraphBuildingHandler extends DefaultHandler {
 //            System.out.println("Tag with k=" + k + ", v=" + v + ".");
         } else if (activeState.equals("node") && qName.equals("tag") && attributes.getValue("k")
                 .equals("name")) {
-            //g.vertice.get(currentID).name = attributes.getValue("v");
+            g.vertice.get(currentID).name = attributes.getValue("v");
             /* While looking at a node, we found a <tag...> with k="name". */
             /* Create a location. */
             /* Hint: Since we found this <tag...> INSIDE a node, we should probably remember which

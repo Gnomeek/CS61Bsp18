@@ -1,4 +1,10 @@
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,7 +18,7 @@ import java.util.regex.Pattern;
  */
 public class Router {
 
-    private static class Node implements Comparable<Node>{
+    private static class Node implements Comparable<Node> {
         Long id;
         double priority;
         Node pre;
@@ -33,12 +39,12 @@ public class Router {
             if (this.getClass() != o.getClass()) {
                 return false;
             }
-            return this.id.equals(((Node)o).id);
+            return this.id.equals(((Node) o).id);
         }
 
         @Override
         public int hashCode() {
-            return (int)(long)this.id;
+            return (int) (long) this.id;
         }
     }
 
@@ -87,14 +93,14 @@ public class Router {
             }
 
             for (long w : g.adjacent(v.id)) {
-                double ed_v_w = g.distance(v.id, w);
-                double d_s_v = bestKnownDistance.get(v.id);
-                double d_h_w = g.distance(w, endID);
+                double edVW = g.distance(v.id, w);
+                double dSV = bestKnownDistance.get(v.id);
+                double dHW = g.distance(w, endID);
 
-                if (!bestKnownDistance.containsKey(w) ||
-                        bestKnownDistance.get(w) > (ed_v_w + d_s_v)) {
-                    bestKnownDistance.put(w, ed_v_w + d_s_v);
-                    fringe.add(new Node(w, ed_v_w + d_s_v + d_h_w, v));
+                if (!bestKnownDistance.containsKey(w)
+                        || bestKnownDistance.get(w) > (edVW + dSV)) {
+                    bestKnownDistance.put(w, edVW + dSV);
+                    fringe.add(new Node(w, edVW + dSV + dHW, v));
                 }
             }
         }

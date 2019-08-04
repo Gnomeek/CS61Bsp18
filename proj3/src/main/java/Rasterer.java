@@ -92,7 +92,8 @@ public class Rasterer {
         String[][] tileGrid = new String[colNum][rowNum];
         for (int i = 0; i < colNum; i += 1) {
             for (int j = 0; j < rowNum; j += 1) {
-                tileGrid[i][j] = ("d" + depth + "_x" + (j + leftRowIndex) +  "_y" + (i + upperColIndex) + ".png");
+                tileGrid[i][j] = ("d" + depth + "_x" + (j + leftRowIndex) +
+                        "_y" + (i + upperColIndex) + ".png");
             }
         }
         results.put("render_grid", tileGrid);
@@ -115,14 +116,14 @@ public class Rasterer {
     }
 
     public void findRasterTile(int depth, double desiredLRLON, double desiredULLON,
-                                         double desiredLRLAT, double desiredULLAT){
+                                         double desiredLRLAT, double desiredULLAT) {
         lonPixelPerTile = (MapServer.ROOT_LRLON - MapServer.ROOT_ULLON) / Math.pow(2, depth);
         latPixelPerTile = (MapServer.ROOT_ULLAT - MapServer.ROOT_LRLAT) / Math.pow(2, depth);
 
-        leftRowIndex = (int)((desiredULLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
-        rightRowIndex = (int)((desiredLRLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
-        upperColIndex = (int)((MapServer.ROOT_ULLAT - desiredULLAT) / latPixelPerTile);
-        lowerColIndex = (int)((MapServer.ROOT_ULLAT - desiredLRLAT) / latPixelPerTile);
+        leftRowIndex = (int) ((desiredULLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
+        rightRowIndex = (int) ((desiredLRLON - MapServer.ROOT_ULLON) / lonPixelPerTile);
+        upperColIndex = (int) ((MapServer.ROOT_ULLAT - desiredULLAT) / latPixelPerTile);
+        lowerColIndex = (int) ((MapServer.ROOT_ULLAT - desiredLRLAT) / latPixelPerTile);
     }
 
     /*
