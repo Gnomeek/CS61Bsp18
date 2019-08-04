@@ -92,8 +92,8 @@ public class Rasterer {
         String[][] tileGrid = new String[colNum][rowNum];
         for (int i = 0; i < colNum; i += 1) {
             for (int j = 0; j < rowNum; j += 1) {
-                tileGrid[i][j] = ("d" + depth + "_x" + (j + leftRowIndex) +
-                        "_y" + (i + upperColIndex) + ".png");
+                tileGrid[i][j] = ("d" + depth + "_x" + (j + leftRowIndex)
+                        + "_y" + (i + upperColIndex) + ".png");
             }
         }
         results.put("render_grid", tileGrid);
