@@ -1,5 +1,4 @@
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,6 +11,37 @@ import java.util.regex.Pattern;
  * down to the priority you use to order your vertices.
  */
 public class Router {
+
+    private static class Node implements Comparable<Node>{
+        Long id;
+        double priority;
+        Node pre;
+
+        public Node(long curID, double priority, Node prev) {
+            this.id = curID;
+            this.priority = priority;
+            this.pre = prev;
+        }
+
+        @Override
+        public int compareTo(Node node) {
+            return Double.compare(this.priority, node.priority);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this.getClass() != o.getClass()) {
+                return false;
+            }
+            return this.id.equals(((Node)o).id);
+        }
+
+        @Override
+        public int hashCode() {
+            return (int)(long)this.id;
+        }
+    }
+
     /**
      * Return a List of longs representing the shortest path from the node
      * closest to a start location and the node closest to the destination
@@ -25,8 +55,52 @@ public class Router {
      */
     public static List<Long> shortestPath(GraphDB g, double stlon, double stlat,
                                           double destlon, double destlat) {
-        return null; // FIXME
+        PriorityQueue<Node> fringe = new PriorityQueue<>();
+        HashSet<Node> marked = new HashSet<>();
+        HashMap<Long, Double> bestKnownDistance = new HashMap<>();
+        List<Long> ans = new LinkedList<>();
+        boolean foundPath = false;
+
+        long startID = g.closest(stlon, stlat);
+        long endID = g.closest(destlon, destlat);
+        double distance = g.distance(startID, endID);
+
+        fringe.add(new Node(startID, distance, null));
+        bestKnownDistance.put(startID, 0.0);
+
+        while (!foundPath && !fringe.isEmpty()) {
+            Node v = fringe.poll();
+            marked.add(v);
+            if (v.id == endID) {
+                foundPath = true;
+                ArrayList<Long> reverseSol = new ArrayList<>();
+                Node mover = v;
+                while (mover != null) {
+                    reverseSol.add(mover.id);
+                    mover = mover.pre;
+                }
+
+                for (int i = 0; i < reverseSol.size(); i++) {
+                    ans.add(reverseSol.get(reverseSol.size() - i - 1));
+                }
+                return ans;
+            }
+
+            for (long w : g.adjacent(v.id)) {
+                double ed_v_w = g.distance(v.id, w);
+                double d_s_v = bestKnownDistance.get(v.id);
+                double d_h_w = g.distance(w, endID);
+
+                if (!bestKnownDistance.containsKey(w) ||
+                        bestKnownDistance.get(w) > (ed_v_w + d_s_v)) {
+                    bestKnownDistance.put(w, ed_v_w + d_s_v);
+                    fringe.add(new Node(w, ed_v_w + d_s_v + d_h_w, v));
+                }
+            }
+        }
+        return ans;
     }
+
 
     /**
      * Create the list of directions corresponding to a route on the graph.
