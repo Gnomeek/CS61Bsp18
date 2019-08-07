@@ -5,6 +5,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Set;
 
 /**
@@ -125,7 +126,17 @@ public class GraphBuildingHandler extends DefaultHandler {
 //            System.out.println("Tag with k=" + k + ", v=" + v + ".");
         } else if (activeState.equals("node") && qName.equals("tag") && attributes.getValue("k")
                 .equals("name")) {
-            g.vertice.get(currentID).name = attributes.getValue("v");
+
+            String v = attributes.getValue("v");
+            String vKey = GraphDB.cleanString(v);
+            double vlat = g.vertice.get(currentID).lat;
+            double vlon = g.vertice.get(currentID).lon;
+            HashMap<String, Object> info = new HashMap<>();
+            info.put("id", currentID);
+            info.put("name", v);
+            info.put("lon", vlon);
+            info.put("lat", vlat);
+            g.locations.put(vKey, info);
             /* While looking at a node, we found a <tag...> with k="name". */
             /* Create a location. */
             /* Hint: Since we found this <tag...> INSIDE a node, we should probably remember which

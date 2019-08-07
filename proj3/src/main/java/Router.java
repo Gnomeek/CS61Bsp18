@@ -115,9 +115,64 @@ public class Router {
      *              corresponds to a node from the graph in the route.
      * @return A list of NavigatiionDirection objects corresponding to the input
      * route.
+     * still have some minor problems
      */
     public static List<NavigationDirection> routeDirections(GraphDB g, List<Long> route) {
-        return null; // FIXME
+        List<NavigationDirection> ans = new LinkedList<>();
+        String curName = NavigationDirection.UNKNOWN_ROAD;
+        int curDirection = NavigationDirection.START;
+        long curID = route.get(0);
+        long nexID = route.get(1);
+        for (int j = 0; j < g.adjacent.get(curID).size(); j += 1) {
+            if (g.adjacent.get(curID).get(j).verticeID == nexID) {
+                if (g.adjacent.get(curID).get(j).name != null) {
+                    curName = g.adjacent.get(curID).get(j).name;
+                }
+            }
+        }
+        double distance = g.distance(curID, nexID);
+        double curBearing = g.bearing(curID, nexID);
+
+        for (int i = 1; i < route.size() - 1; i += 1) {
+            String nexName = NavigationDirection.UNKNOWN_ROAD;
+            curID = route.get(i);
+            nexID = route.get(i + 1);
+            double nexBearing = g.bearing(curID, nexID);
+
+            for (int j = 0; j < g.adjacent.get(curID).size(); j += 1) {
+                if (g.adjacent.get(curID).get(j).verticeID == nexID) {
+                    if (g.adjacent.get(curID).get(j).name != null) {
+                        nexName = g.adjacent.get(curID).get(j).name;
+                    }
+                }
+            }
+
+            if (!nexName.equals(curName)) {
+
+                NavigationDirection naviOnce = new NavigationDirection();
+                naviOnce.way = curName;
+                naviOnce.direction = curDirection;
+                naviOnce.distance = distance;
+                //update information
+                distance = g.distance(curID, nexID);
+                ans.add(naviOnce);
+                curName = nexName;
+                curDirection = NavigationDirection.getDirection(nexBearing - curBearing);
+            } else {
+                distance += g.distance(curID, nexID);
+            }
+
+            curBearing = nexBearing;
+
+            if (i == route.size() - 2) {
+                NavigationDirection endNavi = new NavigationDirection();
+                endNavi.direction = curDirection;
+                endNavi.way = curName;
+                endNavi.distance = distance;
+                ans.add(endNavi);
+            }
+        }
+        return ans;
     }
 
 
@@ -238,6 +293,25 @@ public class Router {
         @Override
         public int hashCode() {
             return Objects.hash(direction, way, distance);
+        }
+
+
+        private static int getDirection(double angle) {
+            if (angle >= -15 && angle <= 15) {
+                return STRAIGHT;
+            } else if (angle > 15 && angle <= 30) {
+                return SLIGHT_RIGHT;
+            } else if (angle > 30 && angle <= 100) {
+                return RIGHT;
+            } else if (angle > 100) {
+                return SHARP_RIGHT;
+            } else if (angle < -15 && angle >= -30) {
+                return SLIGHT_LEFT;
+            } else if (angle < -30 && angle >= -100) {
+                return LEFT;
+            } else {
+                return SHARP_LEFT;
+            }
         }
     }
 }

@@ -6,8 +6,12 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 
 /**
  * Graph for storing all of the intersection (vertex) and road (edge) information.
@@ -211,5 +215,123 @@ public class GraphDB {
      */
     double lat(long v) {
         return vertice.get(v).lat;
+    }
+
+
+
+    //AutoCompletion part
+    protected NameSet locations = new NameSet();
+
+    public List<String> getLocationsByPrefix(String prefix) {
+        return locations.keyWithPrefix(prefix);
+    }
+
+
+    public List<Map<String, Object>> getLocations(String locationName) {
+        LinkedList<Map<String, Object>> result = new LinkedList<>();
+        String clean = GraphDB.cleanString(locationName);
+        if (locations.get(clean) == null) {
+            return result;
+        }
+        for (long w : locations.get(clean).keySet()) {
+            result.add(locations.get(clean).get(w));
+        }
+        return result;
+    }
+
+    public class NameSet {
+        private static final int R = 27;
+        private TrieNode root;
+        private int keySize;
+
+        private int ascToIndex(char c) {
+            if (c == ' ') {
+                return 0;
+            } else {
+                return c - 96;
+            }
+        }
+
+        private char indexToAsc(char c) {
+            if ((int) c == 0) {
+                return ' ';
+            } else {
+                return (char) (c + 96);
+            }
+        }
+
+        private class TrieNode {
+            private HashMap<Long, HashMap<String, Object>> value;
+            private TrieNode[] next = new TrieNode[R];
+        }
+
+        public HashMap<Long, HashMap<String, Object>> get(String key) {
+            TrieNode x = get(root, key, 0);
+            if (x == null) {
+                return null;
+            } else {
+                return x.value;
+            }
+        }
+
+        private TrieNode get(TrieNode x, String key, int depth) {
+            if (x == null) {
+                return null;
+            }
+
+            if (depth == key.length()) {
+                return x;
+            }
+
+            char c = key.charAt(depth);
+            return get(x.next[ascToIndex(c)], key, depth + 1);
+        }
+
+        public void put(String key, HashMap<String, Object> info) {
+            if (key != null) {
+                root = put(root, key, 0, info);
+            }
+        }
+
+        private TrieNode put(TrieNode x, String key, int depth, HashMap<String, Object> info) {
+            if (x == null) {
+                x = new TrieNode();
+            }
+            if (depth == key.length()) {
+                if (x.value == null) {
+                    x.value = new HashMap<>();
+                    keySize += 1;
+                }
+                x.value.put((Long) info.get("id"), info);
+                return x;
+            }
+            char c = key.charAt(depth);
+            x.next[ascToIndex(c)] = put(x.next[ascToIndex(c)], key, depth + 1, info);
+            return x;
+        }
+
+        public LinkedList<String> keyWithPrefix(String prefix) {
+            String cleanedPrefix = GraphDB.cleanString(prefix);
+            LinkedList<String> ans = new LinkedList<>();
+            TrieNode x = get(root, cleanedPrefix, 0);
+            collect(x, new StringBuilder(cleanedPrefix), ans);
+            return ans;
+        }
+
+        private void collect(TrieNode x, StringBuilder prefix, LinkedList<String> ans) {
+            if (x == null) {
+                return;
+            }
+            if (x.value != null) {
+                for (long w : x.value.keySet()) {
+                    ans.add((String) x.value.get(w).get("name"));
+                }
+            }
+            for (char c = 0; c < R; c++) {
+                prefix.append(indexToAsc(c));
+                collect(x.next[c], prefix, ans);
+                prefix.deleteCharAt(prefix.length() - 1);
+            }
+        }
     }
 }
