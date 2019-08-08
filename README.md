@@ -139,18 +139,18 @@ So it would be great for me to receive your stars and I hope that this can reall
 - [x] lecture35
 - [x] lab13
 - [x] lecture36
-- [ ] project3
+- [x] project3
 - [x] lecture37
 
 
 
 ## WEEK 14
 
-- [ ] lecture38
-- [ ] lab14
-- [ ] lecture39
-- [ ] hw5
-- [ ] lecture40
+- [x] lecture38
+- [x] lab14
+- [x] lecture39
+- [x] hw5
+- [x] lecture40
 
 
 
